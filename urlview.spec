@@ -19,7 +19,6 @@ URLs to view using a user specified command.
 %patch -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--with-slang
 %{__make}
@@ -35,8 +34,7 @@ install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 
 install url_handler.sh $RPM_BUILD_ROOT%{_bindir}/url_handler
 
-gzip -9nf AUTHORS ChangeLog README sample.urlview urlview.sgml \
-	$RPM_BUILD_ROOT/%{_mandir}/man1/*
+gzip -9nf AUTHORS ChangeLog README sample.urlview urlview.sgml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
