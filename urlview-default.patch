@@ -1,0 +1,52 @@
+--- urlview-0.7/urlview.c.default	Fri Jan 30 22:28:46 1998
++++ urlview-0.7/urlview.c	Thu Mar 18 23:47:32 1999
+@@ -47,7 +47,7 @@
+ #endif
+ 
+ #define DEFAULT_REGEXP "((((ht|f)tp)|mailto):(//)?[^ >\"\t]*|www\\.[-a-z0-9.]+)[^ .,;\t>\">]"
+-#define DEFAULT_COMMAND "netscape -remote 'openURL(%s)'"
++#define DEFAULT_COMMAND "url_handler.sh '%s'"
+ 
+ #define OFFSET 2
+ #define PAGELEN (LINES - 1 - OFFSET)
+--- urlview-0.7/url_handler.sh.default	Thu Mar 18 23:48:07 1999
++++ urlview-0.7/url_handler.sh	Thu Mar 18 23:50:53 1999
+@@ -14,7 +14,11 @@
+ case $method in
+     ftp)
+ 	target=`echo $url | sed 's;^.*://\([^/]*\)/*\(.*\);\1:/\2;'`
+-	ncftp $target
++	if [ -x /usr/bin/ncftp ]; then
++		ncftp $target
++	else
++		ftp $target
++	fi
+ 	;;
+ 
+     http)   
+@@ -26,7 +30,11 @@
+ 	;;
+ 
+     mailto)
+-	mutt `echo $url | sed 's;^[^:]*:\(.*\);\1;'`
++        if [ -x /usr/bin/mutt ]; then
++		mutt `echo $url | sed 's;^[^:]*:\(.*\);\1;'`
++	else
++		mail `echo $url | sed 's;^[^:]*:\(.*\);\1;'`
++	fi
+ 	;;
+ 
+     *)
+@@ -34,7 +42,11 @@
+ 	case $method in
+ 	    ftp)
+ 		target=`echo $url | sed 's;^\([^/]*\)/*\(.*\);\1:/\2;'`
+-		ncftp $target
++		if [ -x /usr/bin/ncftp ]; then
++			ncftp $target
++		else
++			ftp $target
++		fi
+ 		;;
+ 
+ 	    www)
