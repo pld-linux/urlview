@@ -20,7 +20,7 @@ of URLs to view using a user specified command.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" \
-./configure %{_target} \
+./configure %{_target_platform} \
 	--prefix=/usr \
 	--with-slang
 make
