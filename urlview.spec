@@ -3,10 +3,15 @@ Name:		urlview
 Version:	0.9
 Release:	3
 License:	GPL
-Group:		Applications/Internet
-######		Unknown group!
+Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
+Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.mutt.org/pub/mutt/contrib/%{name}-%{version}.tar.gz
-Requires:	slang >= 0.99.38, webclient
+Patch0:		%{name}-DESTDIR.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	slang-devel
+Requires:	webclient
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -15,9 +20,14 @@ URLs to view using a user specified command.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%configure2_13 \
+rm -f missing
+aclocal
+autoconf
+automake -a -c
+%configure \
 	--with-slang
 %{__make}
 
@@ -26,16 +36,11 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 
 %{__make} install \
-	prefix=$RPM_BUILD_ROOT%{_prefix} \
-	mandir=$RPM_BUILD_ROOT/%{_mandir} \
-	bindir=$RPM_BUILD_ROOT/%{_bindir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 install url_handler.sh $RPM_BUILD_ROOT%{_bindir}/
 
-
 gzip -9nf AUTHORS ChangeLog README sample.urlview urlview.sgml
-
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
