@@ -22,7 +22,7 @@ URLs to view using a user specified command.
 LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--with-slang
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
