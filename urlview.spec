@@ -10,6 +10,7 @@ Source0:	ftp://ftp.mutt.org/mutt/contrib/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-regexp.patch
 Patch2:		%{name}-links.patch
+Patch3:		%{name}-home_etc.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	ncurses-devel
@@ -28,7 +29,8 @@ pozwalaj±ce je ogl±daæ podanym poleceniem.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2	-p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 rm -f missing
