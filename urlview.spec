@@ -19,7 +19,10 @@ of URLs to view using a user specified command.
 %patch -p1 -b .default
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr --with-slang
+CFLAGS="$RPM_OPT_FLAGS" \
+./configure %{_target} \
+	--prefix=/usr \
+	--with-slang
 make
 
 %install
