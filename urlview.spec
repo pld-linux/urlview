@@ -29,7 +29,7 @@ pozwalaj±ce je ogl±daæ podanym poleceniem.
 rm -f missing
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--with-slang
 %{__make}
