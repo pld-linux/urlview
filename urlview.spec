@@ -5,7 +5,7 @@ Version:	0.9
 Release:	4
 License:	GPL
 Group:		Applications/Networking
-Source0:	ftp://ftp.mutt.org/pub/mutt/contrib/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.mutt.org/mutt/contrib/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
