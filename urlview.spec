@@ -5,8 +5,6 @@ Version:	0.9
 Release:	4
 License:	GPL
 Group:		Applications/Networking
-Group(de):	Applikationen/Netzwerkwesen
-Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.mutt.org/pub/mutt/contrib/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
