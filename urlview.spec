@@ -28,8 +28,8 @@ pozwalaj±ce je ogl±daæ podanym poleceniem.
 %build
 rm -f missing
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--with-slang
 %{__make}
