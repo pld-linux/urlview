@@ -43,13 +43,12 @@ install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 
 install url_handler.sh $RPM_BUILD_ROOT%{_bindir}/
 
-gzip -9nf AUTHORS ChangeLog README sample.urlview urlview.sgml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog README sample.urlview urlview.sgml
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
