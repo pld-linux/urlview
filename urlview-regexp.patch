@@ -1,0 +1,61 @@
+diff -urN urlview-0.9.old/sample.urlview urlview-0.9/sample.urlview
+--- urlview-0.9.old/sample.urlview	2000-07-04 12:14:30.000000000 +0200
++++ urlview-0.9/sample.urlview	2004-01-03 11:22:44.000000000 +0100
+@@ -16,8 +16,8 @@
+ # 
+ # Regular expression to use to match URLs.
+ 
+-#REGEXP (((http|https|ftp|gopher)|mailto):(//)?[^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+-REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
++#REGEXP (((http|https|ftp|gopher)|mailto):(//)?[^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t\n>">\):]
++REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t\n>">\):]
+ 
+ # Command to invoke for selected URL.  Use lynx, netscape, or url_handler.sh
+ # shell script.
+diff -urN urlview-0.9.old/urlview.c urlview-0.9/urlview.c
+--- urlview-0.9.old/urlview.c	2000-07-04 12:14:30.000000000 +0200
++++ urlview-0.9/urlview.c	2004-01-03 11:23:03.000000000 +0100
+@@ -46,7 +46,7 @@
+ #include <rx/rxposix.h>
+ #endif
+ 
+-#define DEFAULT_REGEXP "(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>\"]+|(www|web|w3)\\.[-a-z0-9.]+)[^' \t.,;<>\"\\):]"
++#define DEFAULT_REGEXP "(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>\"]+|(www|web|w3)\\.[-a-z0-9.]+)[^' \t\n.,;<>\"\\):]"
+ #define DEFAULT_COMMAND "url_handler.sh %s"
+ #define SYSTEM_INITFILE "/etc/urlview.conf"
+ 
+diff -urN urlview-0.9.old/urlview.conf.suse urlview-0.9/urlview.conf.suse
+--- urlview-0.9.old/urlview.conf.suse	2000-07-04 11:05:10.000000000 +0200
++++ urlview-0.9/urlview.conf.suse	2004-01-03 11:22:50.000000000 +0100
+@@ -4,6 +4,6 @@
+ #
+ # The defaults are shown here:
+ #
+-# REGEXP  (((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t.,;<>"\):]
++# REGEXP  (((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t\n.,;<>"\):]
+ # COMMAND url_handler.sh '%s'
+ #
+diff -urN urlview-0.9.old/urlview.man urlview-0.9/urlview.man
+--- urlview-0.9.old/urlview.man	2000-07-04 12:14:30.000000000 +0200
++++ urlview-0.9/urlview.man	2004-01-03 11:23:17.000000000 +0100
+@@ -48,7 +48,7 @@
+ .sp 
+ .ft RR
+ .nf
+-(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t.,;<>"\):]
++(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t\n.,;<>"\):]
+ .fi
+ .ec
+ .ft P
+diff -urN urlview-0.9.old/urlview.sgml urlview-0.9/urlview.sgml
+--- urlview-0.9.old/urlview.sgml	2000-07-04 12:14:30.000000000 +0200
++++ urlview-0.9/urlview.sgml	2004-01-03 11:23:12.000000000 +0100
+@@ -31,7 +31,7 @@
+ their normal printf(2) meanings.  The default REGEXP is
+ 
+ <verb>
+-(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t.,;<>"\):]
++(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>"]+|(www|web|w3)\.[-a-z0-9.]+)[^' \t\n.,;<>"\):]
+ </verb>
+ 
+ <p>
