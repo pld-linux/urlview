@@ -1,12 +1,11 @@
 Summary:	A URL extractor/viewer for use with Mutt
 Name:		urlview
-Version:	0.7
+Version:	0.9
 Release:	3
 License:	GPL
 Group:		Applications/Internet
 ######		Unknown group!
-Source0:	ftp://ftp.cs.hmc.edu/pub/me/%{name}-%{version}.tar.gz
-Patch0:		urlview-default.patch
+Source0:	ftp://ftp.mutt.org/pub/mutt/contrib/%{name}-%{version}.tar.gz
 Requires:	slang >= 0.99.38, webclient
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -16,10 +15,9 @@ URLs to view using a user specified command.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
-%configure \
+%configure2_13 \
 	--with-slang
 %{__make}
 
@@ -32,9 +30,12 @@ install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
 	mandir=$RPM_BUILD_ROOT/%{_mandir} \
 	bindir=$RPM_BUILD_ROOT/%{_bindir}
 
-install url_handler.sh $RPM_BUILD_ROOT%{_bindir}/url_handler
+install url_handler.sh $RPM_BUILD_ROOT%{_bindir}/
+
 
 gzip -9nf AUTHORS ChangeLog README sample.urlview urlview.sgml
+
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
