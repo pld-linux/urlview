@@ -1,0 +1,14 @@
+This patch adds support for HOME_ETC.
+
+diff -burN urlview-0.9.orig/urlview.c urlview-0.9/urlview.c
+--- urlview-0.9.orig/urlview.c	2000-07-04 12:14:30.000000000 +0200
++++ urlview-0.9/urlview.c	2004-10-31 21:32:06.210002200 +0100
+@@ -186,7 +186,7 @@
+   /*** read the initialization file ***/
+ 
+   pw = getpwuid (getuid ());
+-  snprintf (buf, sizeof (buf), "%s/.urlview", pw->pw_dir);
++  snprintf (buf, sizeof (buf), "%s/.urlview", getenv("HOME_ETC") ? getenv("HOME_ETC") : pw->pw_dir);
+ 
+   /*** Check for users rc-file ***/
+   if (stat (buf,&stat_buf) == -1)
