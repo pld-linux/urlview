@@ -2,7 +2,7 @@ Summary:	A URL extractor/viewer for use with Mutt
 Summary(pl):	Program do wyci±gania/ogl±dania URL-i dla Mutta
 Name:		urlview
 Version:	0.9
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Networking
 Source0:	ftp://ftp.mutt.org/mutt/contrib/%{name}-%{version}.tar.gz
