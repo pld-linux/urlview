@@ -27,7 +27,7 @@ pozwalaj±ce je ogl±daæ podanym poleceniem.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
