@@ -7,7 +7,7 @@ Group:		Applications/Internet
 Source:		ftp://ftp.cs.hmc.edu/pub/me/urlview-0.7.tar.gz
 Patch:		urlview-default.patch
 Requires:	slang >= 0.99.38, webclient
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 urlview extracts URLs from a given text file, and presents a menu
