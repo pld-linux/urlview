@@ -29,8 +29,8 @@ make
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/{bin,man/man1}
 make prefix=$RPM_BUILD_ROOT/usr install
-install -m755 url_handler.sh $RPM_BUILD_ROOT/usr/bin/url_handler.sh
-strip $RPM_BUILD_ROOT/usr/bin/urlview
+install -m755 url_handler.sh $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
+strip $RPM_BUILD_ROOT%{_bindir}/urlview
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -40,8 +40,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog COPYING
 %doc INSTALL README sample.urlview 
 %doc urlview.sgml
-/usr/bin/urlview
-/usr/bin/url_handler.sh
+%{_bindir}/urlview
+%{_bindir}/url_handler.sh
 %{_mandir}/man1/urlview.1
 
 %changelog
