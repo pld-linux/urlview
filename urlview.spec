@@ -43,14 +43,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/urlview
 %{_bindir}/url_handler.sh
 %{_mandir}/man1/urlview.1
-
-%changelog
-* Sun Mar 21 1999 Cristian Gafton <gafton@redhat.com> 
-- auto rebuild in the new build environment (release 3)
-
-* Thu Mar 18 1999 Bill Nottingham <notting@redhat.com>
-- strip binary
-- fix defaults some
-
-* Sat Dec 12 1998 Bill Nottingham <notting@redhat.com>
-- initial build
