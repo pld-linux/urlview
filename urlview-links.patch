@@ -6,8 +6,8 @@
  # The lists of programs to be executed are
 -https_prgs="/usr/X11R6/bin/netscape:XW /usr/bin/lynx:XT"
 -http_prgs="/usr/bin/lynx:XT /usr/X11R6/bin/netscape:XW"
-+https_prgs="/usr/X11R6/bin/netscape:XW /usr/bin/lynx:XT /usr/bin/links:XT"
-+http_prgs="/usr/bin/lynx:XT /usr/X11R6/bin/netscape:XW /usr/bin/links:XT"
++https_prgs="/usr/bin/mozilla:XW /usr/bin/netscape:XW /usr/bin/elinks:XT /usr/bin/links:XT /usr/bin/lynx:XT"
++http_prgs="/usr/bin/elinks:XT /usr/bin/links:XT /usr/bin/lynx:XT /usr/bin/mozilla:XW /usr/bin/netscape:XW"
  mailto_prgs="/usr/bin/mutt:VT /usr/bin/elm:VT /usr/bin/pine:VT /usr/bin/mail:VT"
 -gopher_prgs="/usr/bin/lynx:XT /usr/bin/gopher:XT"
 -ftp_prgs="/usr/bin/lynx:XT /usr/bin/ncftp:XT"
