@@ -42,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc urlview.sgml
 /usr/bin/urlview
 /usr/bin/url_handler.sh
-/usr/man/man1/urlview.1
+%{_mandir}/man1/urlview.1
 
 %changelog
 * Sun Mar 21 1999 Cristian Gafton <gafton@redhat.com> 
