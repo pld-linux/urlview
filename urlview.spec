@@ -7,7 +7,7 @@ Group: Applications/Internet
 Source: ftp://ftp.cs.hmc.edu/pub/me/urlview-0.7.tar.gz
 Patch: urlview-default.patch
 Requires: slang >= 0.99.38, webclient
-Buildroot: /var/tmp/urlview-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 Summary: A URL extractor/viewer for use with Mutt.
 
 %description
