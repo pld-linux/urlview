@@ -1,0 +1,18 @@
+--- urlview-0.9/url_handler.sh	2000-07-04 12:14:30.000000000 +0200
++++ urlview-0.9/url_handler-my.sh	2004-09-17 11:59:16.571137960 +0200
+@@ -28,11 +28,11 @@
+ # VT: Launch in the same terminal
+ 
+ # The lists of programs to be executed are
+-https_prgs="/usr/X11R6/bin/netscape:XW /usr/bin/lynx:XT"
+-http_prgs="/usr/bin/lynx:XT /usr/X11R6/bin/netscape:XW"
++https_prgs="/usr/X11R6/bin/netscape:XW /usr/bin/lynx:XT /usr/bin/links:XT"
++http_prgs="/usr/bin/lynx:XT /usr/X11R6/bin/netscape:XW /usr/bin/links:XT"
+ mailto_prgs="/usr/bin/mutt:VT /usr/bin/elm:VT /usr/bin/pine:VT /usr/bin/mail:VT"
+-gopher_prgs="/usr/bin/lynx:XT /usr/bin/gopher:XT"
+-ftp_prgs="/usr/bin/lynx:XT /usr/bin/ncftp:XT"
++gopher_prgs="/usr/bin/lynx:XT /usr/bin/gopher:XT /usr/bin/links:XT"
++ftp_prgs="/usr/bin/lynx:XT /usr/bin/ncftp:XT /usr/bin/links:XT"
+ 
+ # Program used as an xterm (if it doesn't support -T you'll need to change
+ # the command line in getprg)
