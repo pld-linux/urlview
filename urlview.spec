@@ -1,5 +1,5 @@
 Summary:	A URL extractor/viewer for use with Mutt
-Summary(pl.UTF-8):   Program do wyciągania/oglądania URL-i dla Mutta
+Summary(pl.UTF-8):	Program do wyciągania/oglądania URL-i dla Mutta
 Name:		urlview
 Version:	0.9
 Release:	7
