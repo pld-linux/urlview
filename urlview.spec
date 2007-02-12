@@ -1,5 +1,5 @@
 Summary:	A URL extractor/viewer for use with Mutt
-Summary(pl):	Program do wyci±gania/ogl±dania URL-i dla Mutta
+Summary(pl.UTF-8):   Program do wyciÄ…gania/oglÄ…dania URL-i dla Mutta
 Name:		urlview
 Version:	0.9
 Release:	7
@@ -21,9 +21,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 urlview extracts URLs from a given text file, and presents a menu of
 URLs to view using a user specified command.
 
-%description -l pl
-urlview wyci±ga URL-e z podanego pliku tekstowego i pokazuje menu
-pozwalaj±ce je ogl±daæ podanym poleceniem.
+%description -l pl.UTF-8
+urlview wyciÄ…ga URL-e z podanego pliku tekstowego i pokazuje menu
+pozwalajÄ…ce je oglÄ…daÄ‡ podanym poleceniem.
 
 %prep
 %setup -q
