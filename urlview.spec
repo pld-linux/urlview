@@ -4,7 +4,7 @@ Name:		urlview
 Version:	0.9
 Release:	8
 License:	GPL
-Group:		Applications/Networking
+Group:		Applications/Text
 Source0:	ftp://ftp.mutt.org/mutt/contrib/%{name}-%{version}.tar.gz
 # Source0-md5:	67731f73e69297ffd106b65c8aebb2ab
 Patch0:		%{name}-DESTDIR.patch
