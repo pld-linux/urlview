@@ -1,0 +1,11 @@
+--- urlview.c.orig	2011-02-03 13:32:50.329485003 +0100
++++ urlview.c	2011-02-03 13:33:05.189485002 +0100
+@@ -46,6 +46,8 @@
+ #include <rx/rxposix.h>
+ #endif
+ 
++#include "quote.h"
++
+ #define DEFAULT_REGEXP "(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>\"]+|(www|web|w3)\\.[-a-z0-9.]+)[^' \t\n.,;<>\"\\):]"
+ #define DEFAULT_COMMAND "url_handler.sh %s"
+ #define SYSTEM_INITFILE "/etc/urlview.conf"
