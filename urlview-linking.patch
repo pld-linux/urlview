@@ -1,0 +1,11 @@
+--- configure.in.orig	2011-02-03 13:06:43.689485002 +0100
++++ configure.in	2011-02-03 13:07:13.049485003 +0100
+@@ -23,7 +23,7 @@
+ 		LIBS="$LIBS -lslang -lm"
+ 	fi],
+ 
+-	[AC_CHECK_LIB(ncurses, initscr, [LIBS="$LIBS -lncurses"], [LIBS="$LIBS -lcurses"])
++	[AC_CHECK_LIB(ncurses, initscr, [LIBS="$LIBS -lncurses -ltinfo"], [LIBS="$LIBS -lcurses"])
+ 	AC_CHECK_FUNCS(curs_set)
+ 	AC_CHECK_HEADERS(ncurses.h)
+ 	AC_CHECK_HEADER(ncurses/curses.h, [CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"])])
